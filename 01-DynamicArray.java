@@ -26,7 +26,7 @@ public class Main {
 }
 
 
-
+//Dynamic Array Class
 package dataStructures;
 
 public class DynamicArray {
@@ -35,14 +35,18 @@ public class DynamicArray {
 	int capacity=10;
 	Object[] arr;
 	
+	//Default capacity
 	DynamicArray(){
 		this.arr=new Object[capacity];
 	}
-	
+
+	//Capacity passed by User
 	DynamicArray(int capacity) {
 		this.capacity=capacity;
 		this.arr=new Object[capacity];
 	}
+
+	//Function to Adding the new Objects
 	public void add(Object data) {
 		if(size>=capacity) {
 			grow();
@@ -51,6 +55,7 @@ public class DynamicArray {
 		size++;
 	}
 	
+	//For performing insertion
 	public void insert(int index,Object data) {
 		if(size>=capacity) {
 			grow();
@@ -62,6 +67,7 @@ public class DynamicArray {
 		size++;
 	}
 	
+	//To get the index of the Given Value
 	public int search(Object data) {
 		for(int i=0;i<=size;i++) {
 			if(arr[i]==data) {
@@ -71,6 +77,7 @@ public class DynamicArray {
 		return -1;
 	}
 	
+	//To perform Deletion Operation
 	public void delete(Object data) {
 		for(int i=0;i<size;i++) {
 			if(arr[i]==data) {
@@ -87,6 +94,7 @@ public class DynamicArray {
 	}
 	}
 	
+	//When Size exceed the Capacity then,the Capacity will be Grow
 	public void grow() {
 		int newCapacity=(int)(capacity*2);
 		Object[] newArray=new Object[newCapacity];
@@ -97,6 +105,7 @@ public class DynamicArray {
 		 arr=newArray;
 	}
 	
+	//To avoid the wasting of memory/Space too much 
 	public void shrink() {
 		int newCapacity=(int)(capacity / 2);
 		Object[] newArray=new Object[newCapacity];
@@ -107,6 +116,7 @@ public class DynamicArray {
 		 arr=newArray;
 	}
 	
+	//toString Method foe conquering all Values
 	public String toString() {
 		String string="";
 		
@@ -123,6 +133,8 @@ public class DynamicArray {
 		return string;
 	}
 
+
+	//To find Whether the Array is Empty Or Not 
 	public boolean isEmpty() {
 		return size==0;
 	}
