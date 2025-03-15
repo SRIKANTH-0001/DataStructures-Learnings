@@ -35,7 +35,7 @@ class Solution {
     }
 }
 
-public class tUf {
+public class TOPOSort {
     public static void main(String[] args) {
         int V = 6;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
